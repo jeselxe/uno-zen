@@ -24,16 +24,16 @@ body[data-page='error'] {
 }
 .astro-wrap {
   position: relative;
-  width: 175px;
-  height: 283px;
+  width: 40em;
+  height: 20em;
   margin: -7px auto;
 }
 .astronaut {
   position: absolute;
   top: 0;
   left: 0;
-  width: 175px;
-  height: 283px;
+  width: 40em;
+  height: 20em;
   background: url('/assets/img/wp-player.png');
   transform: translate(0, 50px);
   animation: move 10s infinite;
