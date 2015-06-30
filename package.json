@@ -1,15 +1,21 @@
 {
-  "name": "uno-zen",
+  "name": "uno-zen-cwe",
   "description": "Minimalist and Elegant theme for Ghost",
-  "homepage": "https://github.com/kikobeats/uno-zen",
+  "homepage": "https://github.com/jeselxe/uno-zen",
   "version": "2.2.3",
   "author": {
     "name": "Kiko Beats",
     "url": "https://github.com/kikobeats"
   },
+  "contributors": [
+    {
+        "name"  : "Jesus Gallego",
+        "url"   : "http://github.com/jeselxe"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kikobeats/uno-zen"
+    "url": "https://github.com/jeselxe/uno-zen"
   },
   "bugs": {
     "url": "https://github.com/Kikobeats/uno-zen/issues"
