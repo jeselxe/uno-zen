@@ -1,0 +1,21 @@
+{{!< default}}
+
+{{#post}}
+
+  <article class="{{post_class}}">
+    <header>
+      <h1 id="post-title">{{title}}</h1>
+    </header>
+
+    <section class="{{post_class}}">
+      {{content}}
+    </section>
+
+  </article>
+
+  <script src="{{asset "js/wow.min.js"}}"  type="text/javascript"></script>
+  <script>
+  	new WOW().init();
+  </script>
+
+{{/post}}
