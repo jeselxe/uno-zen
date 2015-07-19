@@ -15,6 +15,15 @@ $ ->
     $('.link-item')[method] 'expanded'
     Uno.search.form options.form if options.form?
 
+  hasClass = (element, cls) ->
+    (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1
+
+  animateCover = ->
+    elements = ['logo', 'title', 'description', 'navigation', 'social']
+    if hasClass(document.getElementById('aside-cover'), 'expanded')
+      for name in elements
+        $('#aside-cover-' + name).addClass 'wow'
+
   $('#blog-button').click ->
     return $("#menu-button").trigger("click") unless Uno.is 'device', 'desktop'
     _expand(hide: 'toggle', form: 'toggle')
@@ -27,3 +36,4 @@ $ ->
   if (Uno.is 'device', 'desktop') and (Uno.is 'page', 'home')
     _animate()
     _expand(aside: 'hide', form: 'hide') if !isOpen
+    animateCover()

@@ -41,7 +41,7 @@ src =
               'assets/vendor/reading-time/build/readingTime.min.js']
   css      :
     main   : 'assets/css/uno.css'
-    vendor : []
+    vendor : ['assets/vendor/animate/animate.css']
 
 dist =
   css      : 'assets/css'
@@ -60,7 +60,6 @@ banner = [ "/**"
 
 gulp.task 'css', ->
   gulp.src src.css.vendor
-  .pipe changed dist.css
   .pipe addsrc src.sass.main
   .pipe sass().on "error", gutil.log
   .pipe concat 'uno.css'

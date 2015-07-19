@@ -9,7 +9,6 @@
   {{> meta}}
 
   <link rel="stylesheet" type="text/css" href="{{asset "css/uno.css"}}" />
-  <link rel="stylesheet" type="text/css" href="{{asset "css/animate.css"}}" />
 
   {{ghost_head}}
 
@@ -36,5 +35,9 @@
 
   {{ghost_foot}}
   <script type="text/javascript" src="{{asset "js/uno.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/wow.min.js"}}"></script>
+  <script>
+    new WOW().init();
+  </script>
 </body>
 </html>
