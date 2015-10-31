@@ -1,0 +1,45 @@
+{{!< default}}
+
+{{#post}}
+
+  <article class="{{post_class}}">
+    <header>
+      <div class="post meta">
+        <time datetime="{{date format="DD MMM YYYY"}}">{{date format="DD MMM YYYY"}}</time>
+        <span class="post tags">{{tags prefix="in " separator=" "}}</span>
+        
+        {{!-- <span class="post author">
+          <img src="{{author.image}}" alt="profile image for {{author.name}}"/> by {{author.name}}
+        </span> --}}
+
+        <span class="post reading-time"> – <span></span> read.</span>
+      </div>
+
+      <a id="share_twitter" alt="Tweet '{{title}}'" href="https://twitter.com/intent/tweet?text={{encode title}}{{encode ' »'}}&amp;hashtags={{tags separator="," autolink="false"}}&amp;url={{url absolute="true"}}" target="_blank">
+        <h1 class="icon-reverse icon-social-twitter-post" id="post-title">{{{title}}}.</h1>
+      </a>
+
+      {{#if image}}<img id="post-image" src={{image}} alt="{{{title}}}">{{/if}}
+
+    </header>
+
+    <section id="post-content" class="{{post_class}}">
+      {{content}}
+    </section>
+
+  </article>
+
+
+  {{> comments}}
+
+{{/post}}
+
+<script src="{{asset "js/intense.min.js"}}"  type="text/javascript"></script>
+
+<script>
+window.onload = function() {
+    // Intensify all images on the page.
+    var element = document.querySelectorAll( 'img' );
+    Intense( element );
+}
+</script>
