@@ -94,6 +94,7 @@ section.post {
     img {
       display: inline-block;
       height: 22px;
+      margin: 0 .5rem;
       vertical-align: middle;
       border: none;
       box-shadow: none;
@@ -103,18 +104,19 @@ section.post {
     padding: 3.75rem 0;
     border-top: 1px solid $gray-light;
   }
-}
-#back-button {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
+  &.related {
+    display: flex;
+    padding: 4rem 0 2rem 0;
+
+    justify-content: space-between;
+  }
 }
 #post-image {
   max-width: 100%;
-  margin-top: 1rem;
+  margin: 3rem 0 2.5rem;
 }
 #post-title {
-  margin: 3rem 0 2.5rem;
+  margin-top: 1rem;
   transition: all $aside-animation-time;
 
   &:hover {

@@ -10,10 +10,8 @@ $ ->
     , 1000)
 
   _expand = (options = {})->
-    method = if options.toggle is 'hide' then 'addClass' else 'toggleClass'
-    $('.cover')[method] 'expanded'
-    $('.link-item')[method] 'expanded'
-    Uno.search.form options.form if options.form?
+    $('.main, .cover, .links > li, html').toggleClass 'expanded'
+    Uno.search.form options.form
 
   hasClass = (element, cls) ->
     (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1
@@ -23,15 +21,17 @@ $ ->
     if hasClass(document.getElementById('aside-cover'), 'expanded')
       for name in elements
         $('#aside-cover-' + name).addClass 'wow'
-
-  $('#blog-button').click ->
-    return $("#menu-button").trigger("click") unless Uno.is 'device', 'desktop'
-    _expand(hide: 'toggle', form: 'toggle')
+    
+  $('.nav-blog > a, #avatar-link').click (event) ->
+    console.log("click blog")
+    if Uno.is 'page', 'home'
+      event.preventDefault()
+      location.hash = if location.hash is '' then '#open' else ''
+      return $('#menu-button').trigger 'click' unless Uno.is 'device', 'desktop'
+      _expand form: 'toggle'
 
   $("#menu-button").click ->
-    $('.cover').toggleClass 'expanded'
-    $('.main').toggleClass 'expanded'
-    $('#menu-button').toggleClass 'expanded'
+    $('.cover, .main, #menu-button, html').toggleClass 'expanded'
 
   if (Uno.is 'device', 'desktop') and (Uno.is 'page', 'home')
     _animate()

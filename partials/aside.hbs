@@ -1,10 +1,10 @@
-<aside id="aside-cover" class="cover">
+<aside id="aside-cover" class="cover" style="background: url({{@blog.cover}}) center/cover no-repeat fixed">
 
   <div class="cover container">
     <div class="profile">
       {{#if @blog.logo}}
       <a id="avatar-link" title="link to homepage for {{@blog.title}}" href="{{@blog.url}}/#open">
-        <img id="aside-cover-logo" src="{{@blog.logo}}" alt="{{@blog.title}} avatar" class="profile avatar hvr-buzz-out bounceInDown" />
+        <img id="aside-cover-logo" src="{{@blog.logo}}" alt="{{@blog.title}} avatar" class="profile avatar rounded hvr-buzz-out bounceInDown" />
         <h1 id="aside-cover-title" class="bounceInDown">{{@blog.title}}</h1>
         <h3 id="profile-resume">{{@blog.description}}</h3>
       </a>

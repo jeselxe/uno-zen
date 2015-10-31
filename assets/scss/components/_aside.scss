@@ -1,10 +1,12 @@
 .cover {
   position: fixed;
-  z-index: 900;
+  z-index: 1;
   display: block;
   width: $aside-width-collapsed;
   height: 100%;
-  @include background-filter;
+  overflow-y: auto;
+
+  border-right: 1px solid $gray;  
 
   &.animated {
     transition: width $aside-animation-time $aside-animation;
@@ -18,6 +20,7 @@
     text-align: center;
     @include center-absolute;
     @include font-shadow;
+    @include background-filter;
   }
 }
 
@@ -35,7 +38,7 @@
     > h1 {
       margin: 0;
       font-family: $sans-font;
-      font-size: $font-size-normal * 1.6;
+      font-size: $unit * 1.6;
       font-weight: $font-weight-bold;
       color: $gray-lightest;
     }
@@ -61,11 +64,41 @@
 
     .links {
       margin: 0;
+      list-style: none;
 
-      &.item {
-        display: inline-block;
+      > li {
+        display: block;
         margin: 0 1px 0 0;
+
         line-height: 1em;
+
+        &.expanded {
+          display: inline-block;
+          margin: 0 5px;
+
+          border-radius: 20px;
+
+          @include btn-cover-with-border;
+
+          > a {
+            padding: .625rem 1.25rem;
+          }
+        }
+
+        > a {
+          display: block;
+          float: none;
+          padding: .5rem 1.25rem;
+
+          opacity: .8;
+          color: $gray-lightest;
+
+          @include btn-cover;
+
+          &:hover {
+            color: $hover-color;
+          }
+        }
       }
     }
   }
@@ -99,17 +132,5 @@
         }
       }
     }
-  }
-}
-.link-item {
-  float: none;
-  padding: .5rem 1.25rem;
-  @include btn-cover;
-
-  &.expanded {
-    float: left;
-    padding: .625rem 1.25rem;
-    margin: 0 5px;
-    @include btn-cover-with-border;
   }
 }
