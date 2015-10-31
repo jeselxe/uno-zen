@@ -8,6 +8,9 @@ $gray-light         : #ddd;
 $gray-lighter       : #eee;
 $gray-lightest      : #f8f8f8;
 
+$black              : #000000;
+$white              : #FFFFFF;
+$cyan               : #006064;
 $green              : #3d8a1a;
 $red                : #c0392b;
 $purple             : #493252;
@@ -15,6 +18,9 @@ $slate              : #3d4260;
 
 $primary-color      : $green;
 $secondary-color    : $gray-darkest;
+
+$cover-secondary	: rgba(darken($primary-color, 10%), .1);
+$cover-primary		: rgba(lighten($primary-color, 10%), .2);
 
 $link-color         : $gray-darker;
 $hover-color        : lighten($primary-color, 15%);
