@@ -19,8 +19,8 @@ $slate              : #3d4260;
 $primary-color      : $green;
 $secondary-color    : $gray-darkest;
 
-$cover-secondary	: rgba(darken($primary-color, 10%), .1);
-$cover-primary		: rgba(lighten($primary-color, 10%), .2);
+$cover-secondary	: rgba(19, 106, 138, .65);
+$cover-primary		: rgba(38, 120, 113, .44);
 
 $link-color         : $gray-darker;
 $hover-color        : lighten($primary-color, 15%);
