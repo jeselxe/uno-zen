@@ -34,16 +34,17 @@
     "gulp": "*",
     "gulp-add-src": "*",
     "gulp-autoprefixer": "*",
-    "gulp-sass": "*",
     "gulp-changed": "*",
     "gulp-coffee": "*",
     "gulp-concat": "*",
     "gulp-cssmin": "*",
     "gulp-header": "*",
     "gulp-minify-css": "*",
+    "gulp-sass": "*",
     "gulp-strip-css-comments": "*",
     "gulp-uglify": "*",
-    "gulp-util": "*"
+    "gulp-util": "*",
+    "gulp-zip": "^3.0.2"
   },
   "engines": {
     "node": "~0.12.x"

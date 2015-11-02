@@ -15,6 +15,7 @@ changed = require 'gulp-changed'
 pkg     = require './package.json'
 prefix  = require 'gulp-autoprefixer'
 strip   = require 'gulp-strip-css-comments'
+zip     = require 'gulp-zip'
 browserSync = require 'browser-sync'
 reload = browserSync.reload
 
@@ -89,6 +90,12 @@ gulp.task 'server', ->
     reloadDelay: 300
     port: PORT.BROWSERSYNC
   return
+  
+ gulp.task 'dist', ->
+   gulp.src ['*.hbs', '*.md', '*.json', 'gulpfile.coffee', 'partials/*', 'assets/css/*', 'assets/fonts/**', 'assets/img/*', 'assets/js/**'], {base : '.'}
+   .pipe zip (pkg.name + '.' + pkg.version  + '.zip')
+   .pipe gulp.dest '../'
+   return
 
 gulp.task 'build', ['css', 'js']
 
